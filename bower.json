@@ -1,0 +1,23 @@
+{
+  "name": "AngularGoRest",
+  "authors": [
+    "Javier Adriel <reivaj0705@gmail.com>"
+  ],
+  "description": "Application to consume go web services for user data",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}
