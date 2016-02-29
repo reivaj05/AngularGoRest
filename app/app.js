@@ -2,6 +2,7 @@
     "use strict";
     angular
         .module("app", [
-            "app.users"
+            "app.users",
+            "app.routes"
         ]);
 })();
