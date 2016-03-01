@@ -3,7 +3,7 @@
 
     angular
         .module("app.routes", [
-            "ui.route"
+            "ui.router"
         ])
         .config(config);
 
@@ -16,9 +16,9 @@
       $stateProvider
         .state('all', {
           url: "/all",
-          templateUrl: "templates/users/users.html"
+          templateUrl: "app/templates/users/users.html",
           controller: "UsersController",
-          controllerAs: "users"
+          controllerAs: "vm"
         });
         /*
         .state('state1.list', {
