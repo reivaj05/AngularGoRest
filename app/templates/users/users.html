@@ -9,7 +9,7 @@
         <h4>Email: {{user.email}}</h2>
         <h4>Username: {{user.username}}</h2>
         <p></p>
-        <p><a ui-sref="userDetail" class="btn btn-primary" role="button">Edit user</a></p>
+        <p><a ui-sref="userEdit({userId: user.id})" class="btn btn-primary" role="button">Edit user</a></p>
       </div>
     </div>
   </div>
