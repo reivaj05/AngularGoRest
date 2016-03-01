@@ -19,15 +19,13 @@
           templateUrl: "app/templates/users/users.html",
           controller: "UsersController",
           controllerAs: "vm"
-        });
-        /*
-        .state('state1.list', {
-          url: "/list",
-          templateUrl: "partials/state1.list.html",
-          controller: function($scope) {
-            $scope.items = ["A", "List", "Of", "Items"];
-          }
         })
+        .state('userEdit', {
+          url: "/user/{userId:[0-9]+}/edit",
+          templateUrl: "app/templates/users/user-edit.html",
+          controller: "UserEditController",
+          controllerAs: "vm"
+        });/*
         .state('state2', {
           url: "/state2",
           templateUrl: "partials/state2.html"
