@@ -24,7 +24,7 @@
                 Users.getUsers().then(getUsersSuccessHandler, getUsersErrorHandler);
 
                 function getUsersSuccessHandler(data, status, headers, config) {
-                    self.users = data;
+                    self.users = data.data;
                 }
 
                 function getUsersErrorHandler(data, status, headers, config) {
