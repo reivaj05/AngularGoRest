@@ -20,7 +20,7 @@
         }
 
         function getUser(id) {
-            return $http.get("http://localhost:8080/user/"+id+"/edit");
+            return $http.get("http://localhost:8080/user/"+id+"/edit/");
         }
 
         function createUser(user) {
