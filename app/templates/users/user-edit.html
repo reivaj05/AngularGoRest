@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <h1>Editing {{vm.user.name + " " + vm.user.lastName}}</h1>
+        <h1>Editing {{::vm.user.name }} {{::vm.user.lastName}}</h1>
         <div class="well">
             <form role="form" ng-submit="vm.saveUser()">
                 <div class="form-group">
