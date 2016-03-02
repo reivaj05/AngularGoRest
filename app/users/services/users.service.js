@@ -10,7 +10,8 @@
         var Users = {
             getUsers: getUsers,
             getUser: getUser,
-            createUser: createUser
+            createUser: createUser,
+            updateUser: updateUser
         }; 
 
         return Users;
@@ -25,6 +26,10 @@
 
         function createUser(user) {
             return;
+        }
+
+        function updateUser(user) {
+            return $http.put("http://localhost:8080/users/update/", user)
         }
     }
 })();
