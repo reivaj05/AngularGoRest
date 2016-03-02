@@ -25,11 +25,13 @@
           templateUrl: "app/templates/users/user-edit.html",
           controller: "UserEditController",
           controllerAs: "vm"
-        });/*
-        .state('state2', {
-          url: "/state2",
-          templateUrl: "partials/state2.html"
         })
+        .state('userCreate', {
+          url: "/users/create",
+          templateUrl: "app/templates/users/user-create.html",
+          controller: "UserCreateController",
+          controllerAs: "vm"
+        });/*
         .state('state2.list', {
           url: "/list",
           templateUrl: "partials/state2.list.html",
