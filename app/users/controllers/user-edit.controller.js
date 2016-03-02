@@ -12,7 +12,7 @@
         self.user = null;
         self.getUser = getUser;
         self.init = init
-        self.saveUser = saveUser;
+        self.updateUser = updateUser;
 
         self.init($stateParams.userId);
 
@@ -32,8 +32,16 @@
             }
         }
 
-        function saveUser() {
-            console.error(self.user);
+        function updateUser() {
+            Users.updateUser(self.user).then(success, error);
+
+            function success(data, status, headers, config) {
+                console.log("User updated");
+            }
+
+            function error(data, status, headers, config) {
+                console.error("Error updating the user");
+            }
         }
     }
 })();
