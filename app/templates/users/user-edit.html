@@ -2,7 +2,7 @@
     <div class="col-md-10 col-md-offset-1">
         <h1>Editing {{::vm.user.name }} {{::vm.user.lastName}}</h1>
         <div class="well">
-            <form role="form" ng-submit="vm.saveUser()">
+            <form role="form" ng-submit="vm.updateUser()">
                 <div class="form-group">
                     <label for="user__name">Name</label>
                     <input type="text" name="" id="user__name" class="form-control" ng-model="vm.user.name" placeholder="ex. Robert">
