@@ -12,6 +12,7 @@
         self.user = null;
         self.getUser = getUser;
         self.init = init
+        self.saveUser = saveUser;
 
         self.init($stateParams.userId);
 
@@ -29,6 +30,10 @@
             function error(data, status, headers, config) {
                 console.error("Error retrieving the user");
             }
+        }
+
+        function saveUser() {
+            console.error(self.user);
         }
     }
 })();
