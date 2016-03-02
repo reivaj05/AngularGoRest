@@ -28,7 +28,7 @@
             }
 
             function error(data, status, headers, config) {
-                console.error("Error retrieving the user");
+                toastr.error('There was an error retrieving the user', 'God damn it!')
             }
         }
 
@@ -36,11 +36,12 @@
             Users.updateUser(self.user).then(success, error);
 
             function success(data, status, headers, config) {
-                console.log("User updated");
+                toastr.success('The user has been updated', "That's what I'm talking about")
             }
 
             function error(data, status, headers, config) {
-                console.error("Error updating the user");
+                toastr.error('There was an error updating the user', 'Inconceivable!')
+
             }
         }
     }

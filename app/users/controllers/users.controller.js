@@ -28,7 +28,7 @@
             }
 
             function getUsersErrorHandler(data, status, headers, config) {
-                console.error("Error retrieving users");
+                toastr.error("There was an error retrieving the users", "Sorry!!")
             }
         }
     }
