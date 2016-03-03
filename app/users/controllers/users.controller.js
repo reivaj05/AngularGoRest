@@ -5,9 +5,9 @@
         .module("app.users.controllers")
         .controller("UsersController", UsersController);
 
-    UsersController.$inject = ['Users'];
+    UsersController.$inject = ["Users", "$location"];
 
-    function UsersController(Users) {
+    function UsersController(Users, $location) {
         var self = this;
 
         self.users = [];
@@ -25,6 +25,10 @@
 
             function getUsersSuccessHandler(data, status, headers, config) {
                 self.users = data.data;
+                if (self.users.length == 0){
+                    $location.path("/home");
+                    toastr.info("There are no users for the moment", "Try creating one");
+                }
             }
 
             function getUsersErrorHandler(data, status, headers, config) {
