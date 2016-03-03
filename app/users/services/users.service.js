@@ -11,7 +11,8 @@
             getUsers: getUsers,
             getUser: getUser,
             createUser: createUser,
-            updateUser: updateUser
+            updateUser: updateUser,
+            deleteUser: deleteUser
         }; 
 
         return Users;
@@ -29,7 +30,11 @@
         }
 
         function updateUser(user) {
-            return $http.put("http://localhost:8080/users/update/", user)
+            return $http.put("http://localhost:8080/users/update/", user);
+        }
+
+        function deleteUser(user) {
+            return $http.post("http://localhost:8080/users/delete/", user);
         }
     }
 })();
