@@ -5,14 +5,17 @@
         .controller("UserEditController", UserEditController);
 
 
-    UserEditController.$inject = ["Users", "$stateParams"];
+    UserEditController.$inject = ["Users", "$stateParams", "$location"];
     
-    function UserEditController(Users, $stateParams) {
+    function UserEditController(Users, $stateParams, $location) {
         var self = this;
         self.user = null;
-        self.getUser = getUser;
+        self.isEditing = true;
         self.init = init
+        self.getUser = getUser;
         self.updateUser = updateUser;
+        self.deleteUser = deleteUser;
+
 
         self.init($stateParams.userId);
 
@@ -28,7 +31,7 @@
             }
 
             function error(data, status, headers, config) {
-                toastr.error('There was an error retrieving the user', 'God damn it!')
+                toastr.error("There was an error retrieving the user", "God damn it!");
             }
         }
 
@@ -36,12 +39,26 @@
             Users.updateUser(self.user).then(success, error);
 
             function success(data, status, headers, config) {
-                toastr.success('The user has been updated', "That's what I'm talking about")
+                $location.path("/all");
+                toastr.success("The user has been updated", "That's what I'm talking about");
             }
 
             function error(data, status, headers, config) {
-                toastr.error('There was an error updating the user', 'Inconceivable!')
+                toastr.error("There was an error updating the user", "Inconceivable!");
 
+            }
+        }
+
+        function deleteUser() {
+            Users.deleteUser(self.user).then(success, error);
+
+            function success(data, status, headers, config) {
+                $location.path("/all");
+                toastr.success('The user has been deleted', "Nooo, please come back!!!");
+            }
+
+            function error(data, status, headers, config) {
+                toastr.error("Hahaha the user wasn't deleted", "And the evil wins!");
             }
         }
     }
