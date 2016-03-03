@@ -6,7 +6,7 @@
 
     UserCreateController.$inject = ["Users", "$location"];
 
-    function UserCreateController(Users) {
+    function UserCreateController(Users, $location) {
         var self = this;
 
         self.user = {
