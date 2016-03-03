@@ -25,7 +25,7 @@
         }
 
         function createUser(user) {
-            return $http.post("http://localhost:8080/users/create", user);
+            return $http.post("http://localhost:8080/users/create/", user);
         }
 
         function updateUser(user) {
