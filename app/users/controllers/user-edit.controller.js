@@ -5,9 +5,9 @@
         .controller("UserEditController", UserEditController);
 
 
-    UserEditController.$inject = ["Users", "$stateParams", "$location"];
+    UserEditController.$inject = ["Users", "$stateParams", "$location", "ngDialog"];
     
-    function UserEditController(Users, $stateParams, $location) {
+    function UserEditController(Users, $stateParams, $location, ngDialog) {
         var self = this;
         self.user = null;
         self.isEditing = true;
@@ -15,6 +15,7 @@
         self.getUser = getUser;
         self.updateUser = updateUser;
         self.deleteUser = deleteUser;
+        self.showModalDeleteUser = showModalDeleteUser;
 
 
         self.init($stateParams.userId);
@@ -49,10 +50,20 @@
             }
         }
 
+        function showModalDeleteUser() {
+            ngDialog.open({
+                template: 'app/templates/users/user-delete.html',
+                controller: "UserEditController",
+                controllerAs: "vm",
+                className: 'ngdialog-theme-default'
+            });
+        }
+
         function deleteUser() {
             Users.deleteUser(self.user).then(success, error);
 
             function success(data, status, headers, config) {
+                
                 $location.path("/all");
                 toastr.success('The user has been deleted', "Nooo, please come back!!!");
             }
