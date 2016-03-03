@@ -3,6 +3,7 @@
     angular
         .module("app", [
             "app.users",
-            "app.routes"
+            "app.routes",
+            "ngDialog"
         ]);
 })();
