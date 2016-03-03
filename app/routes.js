@@ -11,26 +11,30 @@
     
     function config($stateProvider, $urlRouterProvider) {
          //
-      $urlRouterProvider.otherwise("/all");
+      $urlRouterProvider.otherwise("/home");
 
       $stateProvider
-        .state('all', {
+        .state("all", {
           url: "/all",
           templateUrl: "app/templates/users/users.html",
           controller: "UsersController",
           controllerAs: "vm"
         })
-        .state('userEdit', {
+        .state("userEdit", {
           url: "/user/{userId:[0-9]+}/edit",
           templateUrl: "app/templates/users/user-edit.html",
           controller: "UserEditController",
           controllerAs: "vm"
         })
-        .state('userCreate', {
+        .state("userCreate", {
           url: "/users/create",
           templateUrl: "app/templates/users/user-create.html",
           controller: "UserCreateController",
           controllerAs: "vm"
+        })
+        .state("home", {
+            url: "/home",
+            templateUrl:"app/templates/home.html"
         });/*
         .state('state2.list', {
           url: "/list",
